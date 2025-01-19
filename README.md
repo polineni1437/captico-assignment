@@ -1,3 +1,27 @@
+# Client
+
+This is the frontend  for the application. It is built using React.js, Tailwind Css.
+
+
+## Installation
+
+1. Clone the repository
+2. Navigate to the `client` directory
+3. Install dependencies
+
+```bash
+npm install
+```
+## Environment Variables
+
+Create a .env file in the server directory and add the following environment variables:
+VITE_API_URL=<your_server_url>
+
+## Run the app
+```bash
+npm run dev
+```
+
 # Server
 
 This is the backend server for the application. It is built using Node.js, Express, and MongoDB.
