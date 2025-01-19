@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Course from "../models/CourseModel.js";
 
 const createCourse = async(req,res) => {
@@ -20,6 +21,7 @@ const createCourse = async(req,res) => {
 }
 
 const getCourse = async(req,res) => {
+    const user = req.user;
     try {
         const { id } = req.params;
         if(!id) throw new Error("Course Id is required");
@@ -31,6 +33,17 @@ const getCourse = async(req,res) => {
         return res.status(500).json({ success: false, Error: error.message });
     }
 }
+
+const getUserCreatedCourses = async (req, res) => {
+    const user = req.user;
+    try {
+      const courses = await Course.find({ instructor: user.id });
+      return res.status(200).json({ success: true, courses });
+    } catch (error) {
+      console.error("Error in getUserCreatedCourses:", error.message);
+      return res.status(500).json({ success: false, Error: error.message });
+    }
+  };
 
 const updateCourse = async(req,res) => {
     try {
@@ -51,6 +64,7 @@ const updateCourse = async(req,res) => {
 const deleteCourse = async(req,res) => {
     try {
         const {id} = req.params;
+        
         if(!id) throw new Error("Course Id is required");
 
         const deleteCourse = await Course.findByIdAndDelete(id);
@@ -61,4 +75,4 @@ const deleteCourse = async(req,res) => {
     }
 }
 
-export { createCourse, getCourse, updateCourse, deleteCourse };
+export { createCourse, getCourse, updateCourse, deleteCourse, getUserCreatedCourses };

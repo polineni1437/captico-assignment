@@ -41,7 +41,7 @@ const login = async(req,res) => {
         const isPasswordMatched = await bcrypt.compare(password, user.password);
         if(!isPasswordMatched) return res.status(400).json({ success: false, message: "Password is Inavalid" });
 
-        return res.status(200).json({ success: true, message: "Login Successful", token: generateToken(user._id) });
+        return res.status(200).json({ success: true, message: "Login Successful", token: generateToken(user._id), name: user.name });
 
     } catch (error) {
         return res.status(500).json({ success: false, Error: error.message });
