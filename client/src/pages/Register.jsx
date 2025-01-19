@@ -35,7 +35,7 @@ const Register = () => {
   }
   return (
     <div className='w-full h-screen flex justify-center items-center'>
-      <div className='w-[35%] flex flex-col px-10 items-center justify-center'>
+      <div className='w-full lg:w-[35%] flex flex-col px-10 items-center justify-center'>
       <div className='absolute top-3 left-3'>
           <h1 className='text-2xl text-black font-bold'><span className='text-teal-950'>V</span>Learn</h1>
         </div>
@@ -57,7 +57,7 @@ const Register = () => {
       </div>
       </div>
 
-      <div className='w-[65%]'>
+      <div className='w-[65%] hidden lg:block'>
         <img src={image} alt="" className='w-full h-screen object-cover' />
       </div>
     </div>

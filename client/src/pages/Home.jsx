@@ -15,7 +15,7 @@ const Home = () => {
   },[token])
   return (
     <div className='w-full h-screen flex items-center justify-center'>
-      <div className='w-[20%] h-full'>
+      <div className=' hidden lg:block lg:w-[20%] h-full'>
       <Sidebar />
       </div>
       <div className='w-full h-full border-l'>

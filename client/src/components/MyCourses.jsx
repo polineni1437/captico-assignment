@@ -58,12 +58,12 @@ const MyCourses = () => {
 
     useEffect(() => {
         getUserCourses();
-    },[userCourses])
+    },[]);
   return (
     <div className="w-full ">
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-semibold w-1/2">My Courses</h3>
-        <div className="z-10">
+        <div className="lg:z-10">
             <AlertDialog>
               <AlertDialogTrigger>
               <div className="w-32 flex items-center justify-center gap-2 py-2 px-5 rounded-xl bg-white border cursor-pointer">
@@ -89,7 +89,7 @@ const MyCourses = () => {
       </div>
       <div >
        {userCourses.length > 0 ? (
-        <div className="w-full grid grid-cols-4 items-center justify-center gap-5 mt-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-5 mt-5">
             {userCourses.map((course, index) => (
                 <div key={index}>
                     <CourseCard course={course} />

@@ -18,7 +18,7 @@ const Header = () => {
         userLoggedIn();
     }, []);
   return (
-    <div className="w-[85%] h-14 fixed top-0 bg-white shadow-sm flex items-center justify-between px-20">
+    <div className="w-full lg:w-[85%] h-14 fixed top-0 bg-white shadow-sm flex items-center justify-between px-5 lg:px-20">
       {user ? <h1 className="text-xl text-black font-semibold">
         Welcome Back, {user}👋
       </h1>: <h1 className="text-xl text-black font-semibold">
