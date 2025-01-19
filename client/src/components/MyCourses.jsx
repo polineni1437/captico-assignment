@@ -49,7 +49,7 @@ const MyCourses = () => {
                     "Authorization": `Bearer ${token}`
                 }
             });
-            console.log(response.data);
+            // console.log(response.data);
             setUserCourses(response.data.courses);
         } catch (error) {
             console.log(error);
@@ -58,7 +58,7 @@ const MyCourses = () => {
 
     useEffect(() => {
         getUserCourses();
-    },[]);
+    },[userCourses]);
   return (
     <div className="w-full ">
       <div className="flex items-center justify-between">
