@@ -22,6 +22,7 @@ const Register = () => {
       });
       console.log(response.data);
       if(response.status === 201) {
+        localStorage.setItem('token', response.data.token);
         toast({
           title: "Registration Successful",
           variant: "success"
